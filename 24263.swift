@@ -1,0 +1,1 @@
+print(readLine()!,"\n1")
