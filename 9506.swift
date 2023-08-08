@@ -14,7 +14,6 @@ while true {
     if sum != n {
         print ("\(n) is NOT perfect.")
     } else {
-        let output = arr.compactMap { $0 }
-        print(n,"=",output.map(String.init).joined(separator: " + "))
+        print("\(n) = \(arr.map(String.init).joined(separator: " + "))")
     }
 }
