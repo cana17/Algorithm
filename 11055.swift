@@ -13,4 +13,4 @@ for i in 0..<n {
     maxSum = max(maxSum, dp[i])
 }
 
-print(dp.max()!)
+print(maxSum)
