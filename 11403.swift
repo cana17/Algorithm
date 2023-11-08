@@ -1,8 +1,8 @@
 func dfs(_ i: Int) {
     for j in 0..<n {
-        if arr[i][j] == 1 && visited[j] == 0 {
-            visited[j] = 1
-            dfs(j)
+        if arr[i][j] == 1 && answer[j] == 0 { //자식이 있고 아직 방문안한 경우
+            answer[j] = 1 // 정답에 표시
+            dfs(j) // 자식 노드 조사 (하고 복귀)
         }
     }
 }
@@ -15,14 +15,14 @@ for _ in 0..<n {
     arr.append(input)
 }
 
-var visited = [Int](repeating: 0, count: n)
+var answer = [Int](repeating: 0, count: n) // 정답 한 줄씩 출력
 
 //정답 출력
 for i in 0..<n {
     dfs(i)
     for j in 0..<n {
-        visited[j] == 1 ? print(1, terminator: " ") : print(0, terminator: " ") // 한줄씩 출력
+        answer[j] == 1 ? print(1, terminator: " ") : print(0, terminator: " ") // 한줄씩 출력
     }
     print() // 줄바꿈
-    visited = [Int](repeating: 0, count: n) // 방문초기화
+    answer = [Int](repeating: 0, count: n) // 방문초기화
 }
